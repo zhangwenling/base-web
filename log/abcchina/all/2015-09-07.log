@@ -1,0 +1,3 @@
+16:16:17.606 [main] INFO  logback.LogbackDemo - ======info
+16:16:17.607 [main] WARN  logback.LogbackDemo - ======warn
+16:16:17.608 [main] ERROR logback.LogbackDemo - ======error
