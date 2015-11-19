@@ -8,6 +8,7 @@ import cn.knet.showcase.demos.annotation.DataValidate;
 import cn.knet.showcase.demos.springmvc.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -22,7 +23,7 @@ import sun.security.util.Password;
 public class SpringMvcAction {
 	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 
-	@Resource
+	@Autowired
 	private UserService userService;
 
 	@RequestMapping(value = {"/test.html", "/test1.html"})
@@ -32,7 +33,10 @@ public class SpringMvcAction {
 		System.err.println(request.getMethod());
 		String username = "zhangsan";
 		String password = "123456";
+		System.out.println("service 调用开始");
 		userService.doExecute(username, password);
+		System.out.println("service 调用结束");
+
 		return "ok";
 	}
 	
